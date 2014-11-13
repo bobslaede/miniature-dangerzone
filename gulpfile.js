@@ -3,13 +3,17 @@ var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var ngAnnotate = require('gulp-ng-annotate');
-var typescript = require('browserify-typescript');
+var typescript = require('typescriptifier');
 var watch = require('gulp-watch');
 
 gulp.task("typescript", function () {
-  return browserify()
-    .add('./src/app.ts')
-    .transform(typescript)
+  return browserify({
+    entries: './src/index.ts',
+    extensions: ['.ts']
+  })
+    .transform('typescriptifier', {
+      ext: '.ts'
+    })
     .bundle()
     .pipe(source('output.js'))
     .pipe(buffer())

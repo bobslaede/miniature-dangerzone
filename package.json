@@ -23,10 +23,12 @@
     "gulp-browserify": "^0.5.0",
     "gulp-ng-annotate": "^0.3.5",
     "gulp-watch": "^1.1.0",
+    "typescriptifier": "^1.0.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.0.0"
   },
   "dependencies": {
+    "angular": "^1.3.2",
     "flox": "^1.2.0",
     "immutable": "^3.1.0",
     "pouchdb": "^3.1.0"
