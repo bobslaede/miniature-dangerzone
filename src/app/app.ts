@@ -1,4 +1,4 @@
 /// <reference path="../../typings/tsd.d.ts" />
 
 
-export var app = angular.module('app', []);
+modules.export = window.angular.module('app', []);

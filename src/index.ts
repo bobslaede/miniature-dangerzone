@@ -3,4 +3,4 @@
 require('angular');
 import app = require('./app/app');
 
-angular.bootstrap(document.documentElement, [app.name]);
+angular.bootstrap(document.documentElement, ['app']);
