@@ -4,5 +4,5 @@ import angular = require('angular');
 
 export var module = angular.module('app', [])
   .run(() => {
-    console.log('foo bar baz');
+    console.log('hey foo! >(');
   });

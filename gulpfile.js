@@ -3,27 +3,38 @@ var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var ngAnnotate = require('gulp-ng-annotate');
-var watch = require('gulp-watch');
+var wathcify = require('watchify');
+var gutil = require('gulp-util');
 
-gulp.task("typescript", function () {
-  return browserify(
-    {
-      entries: './src/index.ts',
+gulp.task("watch", function () {
+
+  var b = browserify('./src/index.ts', {
       extensions: ['.ts'],
       debug: true,
-      target: 'ES5'
-    })
+      target: 'ES5',
+      cache: {},
+      packageCache: {},
+      fullPaths: true
+    });
+  var bundler = wathcify(b);
+
+  bundler
     .plugin('tsify', {
       target: 'ES5',
       noImplicitAny: true
     })
-    .bundle()
-    .pipe(source('output.js'))
-    .pipe(buffer())
-    .pipe(ngAnnotate())
-    .pipe(gulp.dest('./dist/'))
-});
 
-gulp.task('watch', function() {
-  gulp.watch('./src/**/*.ts', ['typescript']);
+  var rebundle = function () {
+    return bundler
+      .bundle()
+      .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+      .pipe(source('output.js'))
+      //.pipe(buffer())
+      .pipe(gulp.dest('./dist/'))
+  };
+
+  bundler.on('update', rebundle);
+
+  return rebundle();
+
 });
