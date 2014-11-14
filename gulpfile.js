@@ -25,15 +25,19 @@ gulp.task("watch", function () {
     })
 
   var rebundle = function () {
+    gutil.log('Browserify bundle');
+
     return bundler
       .bundle()
-      .on('error', gutil.log.bind(gutil, 'Browserify Error'))
       .pipe(source('output.js'))
-      //.pipe(buffer())
+      .pipe(buffer())
+      .pipe(ngAnnotate())
       .pipe(gulp.dest('./dist/'))
   };
 
-  bundler.on('update', rebundle);
+  bundler
+    .on('update', rebundle)
+    .on('error', gutil.log.bind(gutil, 'Browserify Error'))
 
   return rebundle();
 
