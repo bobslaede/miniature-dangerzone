@@ -18,12 +18,13 @@
   "homepage": "https://github.com/bobslaede/miniature-dangerzone",
   "devDependencies": {
     "browserify": "^6.3.2",
+    "browserify-shim": "^3.8.0",
     "browserify-typescript": "0.0.1",
     "gulp": "^3.8.10",
     "gulp-browserify": "^0.5.0",
     "gulp-ng-annotate": "^0.3.5",
     "gulp-watch": "^1.1.0",
-    "typescriptifier": "^1.0.0",
+    "tsify": "^0.6.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.0.0"
   },
@@ -32,5 +33,16 @@
     "flox": "^1.2.0",
     "immutable": "^3.1.0",
     "pouchdb": "^3.1.0"
+  },
+  "browser" : {
+    "angular": "./node_modules/angular/angular.js"
+  },
+  "browserify-shim": {
+    "angular": "angular"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
   }
 }

@@ -1,6 +1,6 @@
 /// <reference path="../typings/tsd.d.ts" />
 
-require('angular');
+import angular = require('angular');
 import app = require('./app/app');
 
-angular.bootstrap(document.documentElement, ['app']);
+angular.bootstrap(document.documentElement, [app.module.name])

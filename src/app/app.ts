@@ -1,4 +1,8 @@
 /// <reference path="../../typings/tsd.d.ts" />
 
+import angular = require('angular');
 
-modules.export = window.angular.module('app', []);
+export var module = angular.module('app', [])
+  .run(() => {
+    console.log('foo bar baz');
+  });
