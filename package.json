@@ -29,16 +29,14 @@
     "watchify": "^2.1.1"
   },
   "dependencies": {
-    "angular": "^1.3.2",
-    "flox": "^1.2.0",
-    "immutable": "^3.1.0",
-    "pouchdb": "^3.1.0"
   },
   "browser": {
-    "angular": "./node_modules/angular/angular.js"
+    "angular": "./bower_components/angular/angular.js",
+    "pouchdb": "./bower_components/pouchdb/dist/pouchdb.js"
   },
   "browserify-shim": {
-    "angular": "angular"
+    "angular": "angular",
+    "pouchdb": "PouchDB"
   },
   "browserify": {
     "transform": [
