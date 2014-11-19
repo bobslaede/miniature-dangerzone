@@ -2,6 +2,10 @@
 
 import angular = require('angular');
 import app = require('./app/app');
-import PouchDB = require('pouchdb');
+import foo = require('./foo/foo.directive');
 
-angular.bootstrap(document.documentElement, [app.module.name])
+var mod = angular.module('mod', [app.module.name, foo.module.name]);
+
+angular.bootstrap(document.documentElement, [mod.name]);
+
+console.log('bootstrapped');

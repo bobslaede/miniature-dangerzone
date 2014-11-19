@@ -23,13 +23,13 @@
     "gulp-browserify": "^0.5.0",
     "gulp-ng-annotate": "^0.3.5",
     "gulp-util": "^3.0.1",
+    "html-browserify": "0.0.4",
     "tsify": "^0.6.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.0.0",
     "watchify": "^2.1.1"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "browser": {
     "angular": "./bower_components/angular/angular.js",
     "pouchdb": "./bower_components/pouchdb/dist/pouchdb.js"
@@ -40,7 +40,8 @@
   },
   "browserify": {
     "transform": [
-      "browserify-shim"
+      "browserify-shim",
+      "html-browserify"
     ]
   }
 }
