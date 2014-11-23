@@ -7,21 +7,22 @@
 declare module Fynx {
 
   interface Action {
-    listen(callback:Function): void;
+    listen(listener:Function): Function;
+    unlisten(listener:Function): void;
   }
 
   interface Actions {
     [index: string] : Fynx.Action
   }
 
-  interface Store {
-
+  interface Store extends Fynx.Action {
+    isEmpty():Boolean;
   }
 
   interface Fynx {
     createActions (actions:string[]) : Fynx.Actions;
 
-    createStore (immutableStructure:Immutable.Map): Fynx.Store;
+    createStore (data?:any, prepare?:Function): Fynx.Store;
   }
 
 }
