@@ -1,11 +1,11 @@
 /// <reference path="../typings/tsd.d.ts" />
 
 import angular = require('angular');
-import app = require('./app/app');
-import foo = require('./foo/foo.directive');
 
-var mod = angular.module('mod', [app.module.name, foo.module.name]);
+var app = angular.module('app', []);
 
-angular.bootstrap(document.documentElement, [mod.name]);
+app.run(() => {
+  console.log('App is bootstrapped');
+});
 
-console.log('bootstrapped');
+angular.bootstrap(document.documentElement, [app.name]);

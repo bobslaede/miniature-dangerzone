@@ -29,14 +29,14 @@
     "vinyl-source-stream": "^1.0.0",
     "watchify": "^2.1.1"
   },
-  "dependencies": {},
+  "dependencies": {
+  },
   "browser": {
     "angular": "./bower_components/angular/angular.js",
     "pouchdb": "./bower_components/pouchdb/dist/pouchdb.js"
   },
   "browserify-shim": {
-    "angular": "angular",
-    "pouchdb": "PouchDB"
+    "angular": "angular"
   },
   "browserify": {
     "transform": [
