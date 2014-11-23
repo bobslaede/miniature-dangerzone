@@ -3,6 +3,6 @@
 import PouchDB = require('pouchdb');
 
 export var module = angular.module('pouchdb', [])
-  .service('PouchDB', function () {
+  .factory('PouchDB', function () {
     return PouchDB;
   });

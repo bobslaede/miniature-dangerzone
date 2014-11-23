@@ -3,6 +3,6 @@
 import Fynx = require('fynx');
 
 export var module = angular.module('fynx', [])
-  .service('Fynx', function () {
+  .factory('Fynx', function () {
     return Fynx;
   });
