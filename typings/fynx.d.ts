@@ -2,6 +2,7 @@
  * Created by jeppe on 11/23/14.
  */
 
+/// <reference path="../bower_components/immutable/dist/immutable.d.ts" />
 
 declare module Fynx {
 
@@ -13,8 +14,14 @@ declare module Fynx {
     [index: string] : Fynx.Action
   }
 
+  interface Store {
+
+  }
+
   interface Fynx {
     createActions (actions:string[]) : Fynx.Actions;
+
+    createStore (immutableStructure:Immutable.Map): Fynx.Store;
   }
 
 }
