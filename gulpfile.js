@@ -14,7 +14,7 @@ gulp.task("watch", function () {
       target: 'ES5',
       cache: {},
       packageCache: {},
-      fullPaths: true
+      fullPaths: false
     });
   var bundler = wathcify(b);
 

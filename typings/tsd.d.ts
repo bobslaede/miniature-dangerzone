@@ -5,3 +5,4 @@
 /// <reference path="jquery/jquery.d.ts" />
 /// <reference path="pouchDB/pouch.d.ts" />
 /// <reference path="pouchDB.module.d.ts" />
+/// <reference path="fynx.d.ts" />
