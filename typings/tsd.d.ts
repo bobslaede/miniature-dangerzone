@@ -6,4 +6,4 @@
 /// <reference path="pouchDB/pouch.d.ts" />
 /// <reference path="pouchDB.module.d.ts" />
 /// <reference path="fynx.d.ts" />
-/// <reference path="../bower_components/immutable/dist/immutable.d.ts" />
+/// <reference path="../node_modules/immutable/dist/immutable.d.ts" />

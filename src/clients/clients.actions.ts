@@ -3,7 +3,7 @@
 import fynx = require('../fynx');
 import angular = require('angular');
 
-class ClientsActions {
+export class ClientsActions {
 
   public actions:Fynx.Actions;
 

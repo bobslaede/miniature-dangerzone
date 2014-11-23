@@ -2,7 +2,7 @@
  * Created by jeppe on 11/23/14.
  */
 
-/// <reference path="../bower_components/immutable/dist/immutable.d.ts" />
+/// <reference path="../node_modules/immutable/dist/immutable.d.ts" />
 
 declare module Fynx {
 

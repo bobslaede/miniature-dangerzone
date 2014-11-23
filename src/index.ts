@@ -7,8 +7,8 @@ var app = angular.module('app', [
   clients.module.name
 ]);
 
-app.run(() => {
-  console.log('App is bootstrapped');
+app.run((clientsStore:any) => {
+  console.log('App is bootstrapped', clientsStore);
 });
 
 angular.bootstrap(document.documentElement, [app.name]);
